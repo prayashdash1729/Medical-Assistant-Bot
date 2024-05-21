@@ -64,3 +64,5 @@ I use a regex pattern ```r'<s>\[INST\].*?\[/INST\](.*)'``` to extract the answer
 
 ### Evaluation
 For evaluation, I used the cosine similarity between the generated response and the actual response. I used a lot of different techniques to get the sentence embeddings (can be found [here](https://colab.research.google.com/drive/16k-o8eyuZ7KC8ZwdQI8UZUEdCG_WmUdc?usp=sharing)) but the best results were obtained by using the ```sentence-transformers``` library. I used the ```paraphrase-MiniLM-L6-v2``` model to get the embeddings and used the ```cosine_similarity``` function from the ```sklearn``` library to get the similarity score.
+
+I calculated the cosine similarity for every response-answer pair and then took the mean of all the scores as the final score as a metric for evaluation for the model.
